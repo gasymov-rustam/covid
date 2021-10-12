@@ -1,27 +1,27 @@
 const t = {
   uk: {
-    regionUA: 'Украина',
-    regionW: 'Свит',
-    confirmed: 'Виявлено',
-    deaths: 'Померло',
-    recovered: 'Одужало',
-    existing: 'Хворие',
+    regionUA: "Україна",
+    regionW: "Світ",
+    confirmed: "Підтверджено",
+    deaths: "Померло",
+    recovered: "Одужало",
+    existing: "Існуючі",
     region: {
-        world: 'Краина',
-        ukraine: 'Область'
-    }
+      world: "Країна",
+      ukraine: "Область",
+    },
   },
   en: {
-    regionUA: 'Ukraine',
-    regionW: 'World',
-    confirmed: 'Confirmed ',
-    deaths: 'Deaths',
-    recovered: 'Recovered',
-    existing: 'Existing',
+    regionUA: "Ukraine",
+    regionW: "World",
+    confirmed: "Confirmed ",
+    deaths: "Deaths",
+    recovered: "Recovered",
+    existing: "Existing",
     region: {
-        world: 'Country',
-        ukraine: 'Region'
-    }
+      world: "Country",
+      ukraine: "Region",
+    },
   },
 };
 

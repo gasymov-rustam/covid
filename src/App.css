@@ -1,0 +1,10 @@
+body {
+  background: #202128;
+}
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: #202128;
+  margin: 50px auto;
+  padding: 0 16px;
+}

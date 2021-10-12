@@ -1,14 +1,14 @@
-import { useReducer, useContext, createContext, useMemo, useEffect } from 'react';
+import { useReducer, useContext, createContext, useMemo, useEffect } from "react";
 
 const initialState = {
-  region: 'world',
-  lang: 'en',
+  region: "ukraine",
+  lang: "uk",
   covid: {},
   sortParams: {
     key: null,
     order: 1,
   },
-  searchQuery: '',
+  searchQuery: "",
 };
 
 const DataContext = createContext(initialState);
@@ -22,36 +22,36 @@ export function DataProvider({ children }) {
   const memoValue = useMemo(() => [state, dispatch], [state]);
 
   useEffect(() => {
-    getData()
+    getData();
   }, []);
   useEffect(() => {
-    console.log('CONTEXT DATA ->>', state);
+    console.log("CONTEXT DATA ->>", state);
   }, [state]);
 
   async function getData() {
     try {
-      const now = new Date().toJSON().split('T')[0]
-      const response = await fetch(`https://api-covid19.rnbo.gov.ua/data?to=${now}`);
+      const currentData = new Date().toJSON().split("T")[0];
+      const response = await fetch(`https://api-covid19.rnbo.gov.ua/data?to=${currentData}`);
       if (response.ok) {
         const data = await response.json();
-        dispatch({ type: 'GET_COVID_DATA', payload: data });
-      } else{
-        throw `Bad request! ${response.status}`
+        dispatch({ type: "GET_COVID_DATA", payload: data });
+      } else {
+        throw `Bad request! ${response.status}`;
       }
     } catch (error) {
       console.warn(error);
     }
-  };
+  }
   return <DataContext.Provider value={memoValue}>{children}</DataContext.Provider>;
 }
 
-function reducer(state, {type, payload}) {
+function reducer(state, { type, payload }) {
   switch (type) {
-    case 'GET_COVID_DATA': {
-      return {...state, covid: payload};
+    case "GET_COVID_DATA": {
+      return { ...state, covid: payload };
     }
-    case 'CHANGE_LANG': {
-      return {...state, lang: payload};
+    case "CHANGE_LANG": {
+      return { ...state, lang: payload };
     }
     default: {
       throw new Error(`Wrong action.type! Received type is-->> ${type}`);
