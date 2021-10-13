@@ -1,4 +1,4 @@
-const t = {
+const translate = {
   uk: {
     regionUA: "Україна",
     regionW: "Світ",
@@ -25,4 +25,4 @@ const t = {
   },
 };
 
-export default t;
+export default translate;

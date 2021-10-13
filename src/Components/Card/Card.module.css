@@ -1,70 +1,63 @@
-.general-information,
-.wrapper-data {
+.wrapperData {
   display: flex;
   border-bottom: 0.2px solid rgb(61, 61, 61);
   background: #202128;
 }
 
-.wrapper-data:hover {
+.wrapperData:hover {
   background: #292b33;
   cursor: pointer;
 }
 
-.wrapper-data > dt,
-dd {
+.wrapperData > td {
   padding: 20px 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.wrapper-data > dd {
-  width: 40%;
-  justify-content: flex-end;
-  width: 15%;
-}
-
-.wrapper-data__country {
+.wrapperDataCountry {
   width: 40%;
   color: darkgray;
 }
 
-.general-information__confirmed,
-.wrapper-data__confirmed {
+.wrapperDataConfirmed {
   color: yellow;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  width: 15%;
+  /* justify-content: flex-end; */
 }
 
-.general-information__deaths,
-.wrapper-data__deaths {
+.wrapperDataDeaths {
   color: white;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  width: 15%;
 }
 
-.general-information__recovered,
-.wrapper-data__recovered {
+.wrapperDataRecovered {
   color: green;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  width: 15%;
 }
 
-.general-information__existing,
-.wrapper-data__existing {
+.wrapperDataExisting {
   color: red;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: 15%;
 }
 
-.wrapper-data__delta {
+.wrapperDataDelta {
   font-size: 0.8em;
 }

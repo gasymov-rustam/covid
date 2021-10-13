@@ -1,26 +1,26 @@
 import cn from "./Card.module.css";
 import { useData } from "../../hooks/useData";
-
-export default function Card({ array }) {
+import { createArrow } from "../../utilits/utilits";
+export default function Card({ data }) {
   const [{ lang }] = useData();
   return (
-    <tr className="wrapper-data">
-      <td className="wrapper-data__country">${array?.label?.[lang]}</td>
-      <td className="wrapper-data__confirmed">
-        <div>${array?.confirmed}</div>
-        {/* <div className="wrapper-data__delta">${createDataDifference(array["delta_confirmed"])}</div> */}
+    <tr className={cn.wrapperData}>
+      <td className={cn.wrapperDataCountry}>{data.label[lang]}</td>
+      <td className={cn.wrapperDataConfirmed}>
+        <div>{data.confirmed}</div>
+        <div className={cn.wrapperDataDelta}>{createArrow(data["delta_confirmed"])}</div>
       </td>
-      <td className="wrapper-data__deaths">
-        <div>${array?.deaths}</div>
-        {/* <div className="wrapper-data__delta">${createDataDifference(array["delta_deaths"])}</div> */}
+      <td className={cn.wrapperDataDeaths}>
+        <div>{data.deaths}</div>
+        <div className={cn.wrapperDataDelta}>{createArrow(data["delta_deaths"])}</div>
       </td>
-      <td className="wrapper-data__recovered">
-        <div>${array?.recovered}</div>
-        {/* <div className="wrapper-data__delta">${createDataDifference(array["delta_recovered"])}</div> */}
+      <td className={cn.wrapperDataRecovered}>
+        <div>{data.recovered}</div>
+        <div className={cn.wrapperDataDelta}>{createArrow(data["delta_recovered"])}</div>
       </td>
-      <td className="wrapper-data__existing">
-        <div>${array?.existing}</div>
-        {/* <div className="wrapper-data__delta">${createDataDifference(array["delta_existing"])}</div> */}
+      <td className={cn.wrapperDataExisting}>
+        <div>{data.existing}</div>
+        <div className={cn.wrapperDataDelta}>{createArrow(data["delta_existing"])}</div>
       </td>
     </tr>
   );

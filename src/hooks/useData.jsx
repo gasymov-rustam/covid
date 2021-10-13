@@ -24,9 +24,6 @@ export function DataProvider({ children }) {
   useEffect(() => {
     getData();
   }, []);
-  useEffect(() => {
-    console.log("CONTEXT DATA ->>", state);
-  }, [state]);
 
   async function getData() {
     try {
