@@ -10,15 +10,9 @@ export default function Lang() {
   const { regionW, regionUA } = translate[lang];
   const buttons = [regionUA, regionW];
 
-  function changeRegion(btn, idx) {
+  function changeRegion(idx) {
     setCount(idx);
-    const district = Object.keys(translate.en.region).reverse()[idx];
-    dispatch({ type: "CHANGE_REGION", payload: district });
-    // const currentCount = (idx) => {
-    //   setCount(idx);
-    //   setCoronaArray(corona[coronaRegion[idx]]);
-    // };
-    console.log(covid[idx]);
+    dispatch({ type: "CHANGE_REGION", payload: Object.keys(covid)[idx] });
   }
   return (
     <div className={cn.wrapper}>
@@ -26,7 +20,7 @@ export default function Lang() {
         <button
           key={button}
           className={count === idx ? cl(cn.tabs, cn.active) : cn.tabs}
-          onClick={() => changeRegion(button, idx)}
+          onClick={() => changeRegion(idx)}
         >
           {button}
         </button>

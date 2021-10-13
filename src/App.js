@@ -11,11 +11,10 @@ function App() {
   return (
     <div className="container">
       <Lang />
-
+      <Header title="CORONA" />
+      <BtnTabs />
+      <Search />
       <table>
-        <Header title="CORONA" />
-        <BtnTabs />
-        <Search />
         <GeneralInfo />
         <CardList />
       </table>

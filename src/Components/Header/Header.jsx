@@ -1,5 +1,5 @@
 import cn from "./Header.module.css";
 
 export default function Header({ title }) {
-  return <caption className={cn.title}>{title}</caption>;
+  return <h2 className={cn.title}>{title}</h2>;
 }

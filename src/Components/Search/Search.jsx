@@ -111,24 +111,22 @@ export default function Search() {
   //   console.log(searchQuery);
   // }
   return (
-    <div>
-      <form
-        method="get"
-        onChange={(e) => dispatch({ type: "SEARCH", payload: e.target.value })}
-        className={cl.searchForm}
-      >
-        <button type="submit" className={cl.button} disabled>
-          &#128269;
-        </button>
-        <input
-          type="text"
-          className={cl.input}
-          name="searchPlace"
-          placeholder="search by region"
-          id="searchPlaceEl"
-          value={searchQuery}
-        />
-      </form>
-    </div>
+    <form
+      method="get"
+      onChange={(e) => dispatch({ type: "SEARCH", payload: e.target.value })}
+      className={cl.searchForm}
+    >
+      <button type="submit" className={cl.button} disabled>
+        &#128269;
+      </button>
+      <input
+        type="text"
+        className={cl.input}
+        name="searchPlace"
+        placeholder="search by region"
+        id="searchPlaceEl"
+        value={searchQuery}
+      />
+    </form>
   );
 }
