@@ -12,6 +12,7 @@ const translate = {
     },
   },
   en: {
+    // regionBtn: { ukraine: "Україна", world: "Світ" },
     regionUA: "Ukraine",
     regionW: "World",
     confirmed: "Confirmed ",

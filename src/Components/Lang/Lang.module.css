@@ -1,3 +1,9 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn {
   padding: 8px 16px;
   margin: 4px;

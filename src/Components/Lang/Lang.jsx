@@ -5,17 +5,15 @@ import { useState } from "react";
 import cl from "classnames";
 
 export default function Lang() {
-  const [, dispatch] = useData();
-  const [count, setCount] = useState(null);
+  const [{ lang }, dispatch] = useData();
+  const [count, setCount] = useState(0);
   const languages = Object.keys(translate);
   function changeLanguage(language, idx) {
-    console.log(languages);
-    console.log(count);
     dispatch({ type: "CHANGE_LANG", payload: language });
     setCount(idx);
   }
   return (
-    <>
+    <div className={cn.wrapper}>
       {languages.map((language, idx) => (
         <button
           key={language}
@@ -25,7 +23,6 @@ export default function Lang() {
           {language}
         </button>
       ))}
-      {/* {languages.map((language, idx) => <button key={language} onClick={changeLanguage(language, idx)})} */}
-    </>
+    </div>
   );
 }

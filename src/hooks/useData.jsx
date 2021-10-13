@@ -8,7 +8,7 @@ const initialState = {
     key: null,
     order: 1,
   },
-  searchQuery: "",
+  searchQuery: [],
 };
 
 const DataContext = createContext(initialState);
@@ -49,6 +49,12 @@ function reducer(state, { type, payload }) {
     }
     case "CHANGE_LANG": {
       return { ...state, lang: payload };
+    }
+    case "CHANGE_REGION": {
+      return { ...state, region: payload };
+    }
+    case "SEARCH": {
+      return { ...state, searchQuery: payload };
     }
     default: {
       throw new Error(`Wrong action.type! Received type is-->> ${type}`);

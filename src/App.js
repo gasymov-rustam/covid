@@ -1,19 +1,25 @@
 import "./App.css";
 import "./resets.css";
 import Header from "./Components/Header/Header";
-// import { useData } from "./hooks/useData";
 import CardList from "./Components/CardList/CardList";
 import Lang from "./Components/Lang/Lang";
+import BtnTabs from "./Components/BtnTabs/BtnTabs";
+import GeneralInfo from "./Components/GeneralInfo/GeneralInfo";
+import Search from "./Components/Search/Search";
 
 function App() {
   return (
-    <>
-      <table className="container">
-        <Lang />
+    <div className="container">
+      <Lang />
+
+      <table>
         <Header title="CORONA" />
+        <BtnTabs />
+        <Search />
+        <GeneralInfo />
         <CardList />
       </table>
-    </>
+    </div>
   );
 }
 
