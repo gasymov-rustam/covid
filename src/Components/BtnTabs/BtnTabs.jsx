@@ -6,7 +6,7 @@ import cl from "classnames";
 
 export default function Lang() {
   const [count, setCount] = useState(0);
-  const [{ region, lang }, dispatch] = useData();
+  const [{ covid, region, lang }, dispatch] = useData();
   const { regionW, regionUA } = translate[lang];
   const buttons = [regionUA, regionW];
 
@@ -14,6 +14,11 @@ export default function Lang() {
     setCount(idx);
     const district = Object.keys(translate.en.region).reverse()[idx];
     dispatch({ type: "CHANGE_REGION", payload: district });
+    // const currentCount = (idx) => {
+    //   setCount(idx);
+    //   setCoronaArray(corona[coronaRegion[idx]]);
+    // };
+    console.log(covid[idx]);
   }
   return (
     <div className={cn.wrapper}>

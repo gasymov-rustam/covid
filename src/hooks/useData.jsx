@@ -8,7 +8,7 @@ const initialState = {
     key: null,
     order: 1,
   },
-  searchQuery: [],
+  searchQuery: "",
 };
 
 const DataContext = createContext(initialState);
