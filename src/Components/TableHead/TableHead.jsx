@@ -36,7 +36,7 @@ export default function TableHead() {
             <>&#129045;&#32;{item}</>
           ) : (
             <>&#129047;&#32;{item}</>
-          )
+          )}
         </button>
       ))}
     </>
