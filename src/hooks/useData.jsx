@@ -56,6 +56,12 @@ function reducer(state, { type, payload }) {
     case "SEARCH": {
       return { ...state, searchQuery: payload };
     }
+    case "SORT": {
+      return {
+        ...state,
+        sortParams: payload,
+      };
+    }
     default: {
       throw new Error(`Wrong action.type! Received type is-->> ${type}`);
     }

@@ -6,7 +6,7 @@ import cl from "classnames";
 
 export default function Lang() {
   const [count, setCount] = useState(0);
-  const [{ covid, region, lang }, dispatch] = useData();
+  const [{ covid, lang }, dispatch] = useData();
   const { regionW, regionUA } = translate[lang];
   const buttons = [regionUA, regionW];
 

@@ -6,6 +6,7 @@ import Lang from "./Components/Lang/Lang";
 import BtnTabs from "./Components/BtnTabs/BtnTabs";
 import GeneralInfo from "./Components/GeneralInfo/GeneralInfo";
 import Search from "./Components/Search/Search";
+import TableHead from "./Components/TableHead/TableHead";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header title="CORONA" />
       <BtnTabs />
       <Search />
+      <TableHead />
       <table>
         <GeneralInfo />
         <CardList />
