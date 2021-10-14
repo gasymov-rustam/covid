@@ -1,28 +1,29 @@
-import { useData } from "../../hooks/useData";
-import translate from "../../translate/translations";
-import { sortBy } from "../../utilits/utilits";
-import Card from "../Card/Card";
+import { useData } from '../../hooks/useData';
+import { sortBy } from '../../utilits/utilits';
+import Card from '../Card/Card';
 
 export default function CardList() {
-  const [{ sortParams, covid, region, searchQuery }] = useData();
+  const [{ sortParams, covid, currentRegion, searchQuery, lang }] = useData();
   const { key, order } = sortParams;
 
   let formattedArray = [];
-  const word = searchQuery.split(" ")[0];
-  if (covid[region]) {
-    const filterField = Object.keys(translate);
-    formattedArray = covid[region].filter((item) => {
-      return filterField.some((field) => {
-        return String(item.label[field]).toLowerCase().includes(word);
+  const query = searchQuery
+    .toLowerCase()
+    .trim()
+    .replaceAll(/[\s]{2,}/g, ' ')
+    .split(' ');
+  if (covid[currentRegion]) {
+    formattedArray = covid[currentRegion].filter((region) => {
+      return query.every((word) => {
+        return region.label[lang].toLowerCase().includes(word);
       });
     });
   }
   return (
     <tbody>
-      {covid[region] &&
-        formattedArray
-          .sort(sortBy(formattedArray, key, order))
-          .map((item) => <Card key={item.id} data={item} />)}
+      {formattedArray.sort(sortBy(key, order, lang)).map((item) => (
+        <Card key={item.id} data={item} />
+      ))}
     </tbody>
   );
 }

@@ -1,12 +1,12 @@
 import { useReducer, useContext, createContext, useMemo, useEffect } from "react";
 
 const initialState = {
-  region: "ukraine",
-  lang: "uk",
+  currentRegion: "world",
+  lang: "en",
   covid: {},
   sortParams: {
-    key: null,
-    order: 1,
+    key: 'confirmed',
+    order: -1,
   },
   searchQuery: "",
 };
@@ -33,7 +33,7 @@ export function DataProvider({ children }) {
         const data = await response.json();
         dispatch({ type: "GET_COVID_DATA", payload: data });
       } else {
-        throw `Bad request! ${response.status}`;
+        throw new Error(`Bad request! ${response.status}`);
       }
     } catch (error) {
       console.warn(error);
@@ -51,7 +51,7 @@ function reducer(state, { type, payload }) {
       return { ...state, lang: payload };
     }
     case "CHANGE_REGION": {
-      return { ...state, region: payload };
+      return { ...state, currentRegion: payload };
     }
     case "SEARCH": {
       return { ...state, searchQuery: payload };

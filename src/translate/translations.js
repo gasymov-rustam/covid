@@ -1,7 +1,7 @@
 const translate = {
   uk: {
-    regionUA: "Україна",
-    regionW: "Світ",
+    ukraine: "Україна",
+    world: "Світ",
     confirmed: "Підтверджено",
     deaths: "Померло",
     recovered: "Одужало",
@@ -13,8 +13,8 @@ const translate = {
   },
   en: {
     // regionBtn: { ukraine: "Україна", world: "Світ" },
-    regionUA: "Ukraine",
-    regionW: "World",
+    ukraine: "Ukraine",
+    world: "World",
     confirmed: "Confirmed ",
     deaths: "Deaths",
     recovered: "Recovered",

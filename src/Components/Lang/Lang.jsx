@@ -5,20 +5,18 @@ import { useState } from "react";
 import cl from "classnames";
 
 export default function Lang() {
-  const [, dispatch] = useData();
-  const [count, setCount] = useState(0);
+  const [{lang}, dispatch] = useData();
   const languages = Object.keys(translate);
-  function changeLanguage(language, idx) {
+  function changeLanguage(language) {
     dispatch({ type: "CHANGE_LANG", payload: language });
-    setCount(idx);
   }
   return (
     <div className={cn.wrapper}>
-      {languages.map((language, idx) => (
+      {languages.map((language) => (
         <button
           key={language}
-          className={count === idx ? cl(cn.btn, cn.active) : cn.btn}
-          onClick={() => changeLanguage(language, idx)}
+          className={cl(cn.btn, {[cn.active]: lang === language})}
+          onClick={() => changeLanguage(language)}
         >
           {language}
         </button>

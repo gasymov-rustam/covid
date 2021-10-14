@@ -1,33 +1,29 @@
 import { useData } from "../../hooks/useData";
-import { useState } from "react";
 import translate from "../../translate/translations";
 import cn from "./BtnTabs.module.css";
 import cl from "classnames";
 
 export default function Lang() {
-  const [count, setCount] = useState(0);
-  const [{ covid, lang }, dispatch] = useData();
-  const { regionW, regionUA } = translate[lang];
-  const buttons = [regionUA, regionW];
+  const [{ covid, lang, currentRegion }, dispatch] = useData();
+  const regions = Object.keys(covid)
 
-  function changeRegion(idx) {
-    setCount(idx);
-    dispatch({ type: "CHANGE_REGION", payload: Object.keys(covid)[idx] });
+  function changeRegion(selectedRegion) {
+    dispatch({ type: "CHANGE_REGION", payload: selectedRegion });
     dispatch({ type: "SEARCH", payload: "" });
     dispatch({
       type: "SORT",
-      payload: { key: null, order: 1 },
+      payload: { key: 'confirmed', order: -1 },
     });
   }
   return (
     <div className={cn.wrapper}>
-      {buttons.map((button, idx) => (
+      {regions.map((region) => (
         <button
-          key={button}
-          className={count === idx ? cl(cn.tabs, cn.active) : cn.tabs}
-          onClick={() => changeRegion(idx)}
+          key={region}
+          className={cl(cn.tabs, {[cn.active]: region === currentRegion})}
+          onClick={() => changeRegion(region)}
         >
-          {button}
+          {translate[lang][region]}
         </button>
       ))}
     </div>

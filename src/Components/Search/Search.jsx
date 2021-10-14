@@ -5,7 +5,7 @@ export default function Search() {
   const [{ searchQuery }, dispatch] = useData();
   return (
     <div className={cl.wrapper}>
-      <form method="get" className={cl.searchForm}>
+      <form className={cl.searchForm}>
         <button type="submit" className={cl.button} disabled>
           &#128269;
         </button>
@@ -15,7 +15,6 @@ export default function Search() {
           className={cl.input}
           name="searchPlace"
           placeholder="search by region"
-          id="searchPlaceEl"
           value={searchQuery}
         />
       </form>
