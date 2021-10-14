@@ -15,10 +15,14 @@ function App() {
       <Header title="CORONA" />
       <BtnTabs />
       <Search />
-      <TableHead />
       <table>
-        <GeneralInfo />
-        <CardList />
+        <thead>
+          <GeneralInfo />
+          <TableHead />
+        </thead>
+        <tbody>
+          <CardList />
+        </tbody>
       </table>
     </div>
   );

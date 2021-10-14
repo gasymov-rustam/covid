@@ -2,6 +2,7 @@
   display: flex;
   border-bottom: 0.2px solid rgb(61, 61, 61);
   background: #202128;
+  margin-top: 10px;
 }
 
 .wrapperData:hover {

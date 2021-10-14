@@ -13,6 +13,11 @@ export default function Lang() {
   function changeRegion(idx) {
     setCount(idx);
     dispatch({ type: "CHANGE_REGION", payload: Object.keys(covid)[idx] });
+    dispatch({ type: "SEARCH", payload: "" });
+    dispatch({
+      type: "SORT",
+      payload: { key: null, order: 1 },
+    });
   }
   return (
     <div className={cn.wrapper}>

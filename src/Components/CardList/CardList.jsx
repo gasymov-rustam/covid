@@ -4,7 +4,7 @@ import { sortBy } from "../../utilits/utilits";
 import Card from "../Card/Card";
 
 export default function CardList() {
-  const [{ sortParams, covid, region, searchQuery, lang }] = useData();
+  const [{ sortParams, covid, region, searchQuery }] = useData();
   const { key, order } = sortParams;
 
   let formattedArray = [];
@@ -20,8 +20,8 @@ export default function CardList() {
   return (
     <tr>
       {covid[region] &&
-        (formattedArray.length === 0 ? covid[region] : formattedArray)
-          .sort(sortBy(formattedArray && covid[region]), key, order)
+        formattedArray
+          .sort(sortBy(formattedArray, key, order))
           .map((item) => <Card key={item.id} data={item} />)}
     </tr>
   );

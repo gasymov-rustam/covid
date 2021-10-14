@@ -5,7 +5,7 @@ import { useState } from "react";
 import cl from "classnames";
 
 export default function Lang() {
-  const [{ lang }, dispatch] = useData();
+  const [, dispatch] = useData();
   const [count, setCount] = useState(0);
   const languages = Object.keys(translate);
   function changeLanguage(language, idx) {
