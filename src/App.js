@@ -14,15 +14,13 @@ function App() {
       <Lang />
       <Header title="CORONA" />
       <BtnTabs />
+      <GeneralInfo />
       <Search />
       <table>
         <thead>
-          <GeneralInfo />
           <TableHead />
         </thead>
-        <tbody>
-          <CardList />
-        </tbody>
+        <CardList />
       </table>
     </div>
   );

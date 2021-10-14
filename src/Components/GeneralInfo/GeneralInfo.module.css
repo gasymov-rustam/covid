@@ -1,7 +1,7 @@
 .generalInformation {
   display: flex;
-  border-bottom: 0.2px solid rgb(61, 61, 61);
-  background: #202128;
+  margin-bottom: 10px;
+  background: #292b33;
 }
 
 .confirmed {
@@ -36,7 +36,7 @@
   gap: 10px;
 }
 
-.generalInformation > th {
+.generalInformation > div {
   width: 25%;
   font-size: 20px;
   padding: 16px 8px;

@@ -18,11 +18,11 @@ export default function CardList() {
     });
   }
   return (
-    <tr>
+    <tbody>
       {covid[region] &&
         formattedArray
           .sort(sortBy(formattedArray, key, order))
           .map((item) => <Card key={item.id} data={item} />)}
-    </tr>
+    </tbody>
   );
 }

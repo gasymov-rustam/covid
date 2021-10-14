@@ -6,32 +6,28 @@ export default function GeneralInfo() {
   const [{ region, covid }] = useData();
   const data = covid[region];
   return (
-    <tr className={cl.generalInformation}>
-      <th className={cl.confirmed}>
-        <div>Підтверджено:</div>
-        <div>{data && createSum(data, "confirmed")}</div>
-        <div className={cl.differnce}>
-          {data && createArrow(createSum(data, "delta_confirmed"))}
-        </div>
-      </th>
-      <th className={cl.deaths}>
-        <div>Померло:</div>
-        <div>{data && createSum(data, "deaths")}</div>
-        <div className={cl.differnce}>{data && createArrow(createSum(data, "delta_deaths"))}</div>
-      </th>
-      <th className={cl.recovered}>
-        <div>Одужало:</div>
-        <div>{data && createSum(data, "recovered")}</div>
-        <div className={cl.differnce}>
-          {data && createArrow(createSum(data, "delta_recovered"))}
-        </div>
-      </th>
-      <th className={cl.existing}>
-        <div>Існуючі:</div>
-        <div>{data && createSum(data, "existing")}</div>
-        <div className={cl.differnce}>{data && createArrow(createSum(data, "delta_existing"))}</div>
-      </th>
+    <dl className={cl.generalInformation}>
+      <div className={cl.confirmed}>
+        <dt>Підтверджено:</dt>
+        <dd>{data && createSum(data, "confirmed")}</dd>
+        <dd className={cl.differnce}>{data && createArrow(createSum(data, "delta_confirmed"))}</dd>
+      </div>
+      <div className={cl.deaths}>
+        <dt>Померло:</dt>
+        <dd>{data && createSum(data, "deaths")}</dd>
+        <dd className={cl.differnce}>{data && createArrow(createSum(data, "delta_deaths"))}</dd>
+      </div>
+      <div className={cl.recovered}>
+        <dt>Одужало:</dt>
+        <dd>{data && createSum(data, "recovered")}</dd>
+        <dd className={cl.differnce}>{data && createArrow(createSum(data, "delta_recovered"))}</dd>
+      </div>
+      <div className={cl.existing}>
+        <dt>Існуючі:</dt>
+        <dd>{data && createSum(data, "existing")}</dd>
+        <dd className={cl.differnce}>{data && createArrow(createSum(data, "delta_existing"))}</dd>
+      </div>
       ;
-    </tr>
+    </dl>
   );
 }

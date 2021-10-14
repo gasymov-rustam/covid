@@ -26,9 +26,9 @@ export default function TableHead() {
     });
   }
   return (
-    <th className={cn.wrapper}>
+    <tr className={cn.wrapper}>
       {(region === "ukraine" ? sortFieldsUk : sortFieldsW).map((item, idx) => (
-        <td
+        <th
           className={count === idx ? cl(cn.sortBtn, cn.active) : cn.sortBtn}
           onClick={() => handler(idx)}
           key={item}
@@ -48,8 +48,8 @@ export default function TableHead() {
               {item}
             </span>
           )}
-        </td>
+        </th>
       ))}
-    </th>
+    </tr>
   );
 }

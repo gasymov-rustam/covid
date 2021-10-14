@@ -1,3 +1,7 @@
+.wrapper {
+  padding: 0 8px;
+}
+
 .searchForm {
   width: 100%;
   display: flex;

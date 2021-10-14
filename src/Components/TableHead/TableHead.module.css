@@ -21,7 +21,7 @@
   background: #292b33;
 }
 
-.wrapper > td:nth-child(1) {
+.wrapper > th:nth-child(1) {
   width: 40%;
   padding-left: 10px;
 }
